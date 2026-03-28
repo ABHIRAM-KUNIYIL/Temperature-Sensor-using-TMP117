@@ -4,21 +4,21 @@
 
 A custom-built Arduino hardware solution for monitoring multi-point temperature data inside a laboratory environment. This system simultaneously tracks data from five high-precision TMP117 sensors and streams the live results directly to Microsoft Excel via the Data Streamer add-in.
 
-## 🚀 Features
+##  Features
 
 * **Multi-Sensor I2C Workaround:** Because TMP117 sensors often share the same hardware I2C address (`0x48`), this project utilizes the `SoftwareWire` library to create 5 distinct software I2C buses.
 * **Shared Clock Architecture:** To save Arduino pins, all 5 sensors share a single Clock (SCL) line, utilizing separate Data (SDA) lines.
 * **Live Excel Streaming:** Data is continuously piped over the Serial port as comma-separated values (CSV), pre-formatted for live plotting in Excel.
 * **Smart LCD Display:** Features a paginated 16x2 I2C LCD that automatically cycles every 3 seconds to display the live readings of all 5 sensors without using `delay()`, ensuring the data stream remains uninterrupted.
 
-## 🛠️ Hardware Requirements
+##  Hardware Requirements
 
 * 1x Arduino Uno (or compatible board)
 * 5x TMP117 High-Precision Temperature Sensors
 * 1x 1602A LCD Screen with I2C Backpack
 * Breadboard and jumper wires
 
-## 🔌 Wiring Guide
+##  Wiring Guide
 
 ### Power Hub (Breadboard Rails)
 * **3.3V Rail:** Connect Arduino 3.3V to the breadboard positive rail. Plug all 5 sensor VCC (Red) wires here.
@@ -38,7 +38,7 @@ A custom-built Arduino hardware solution for monitoring multi-point temperature 
 * **SDA** ➔ Arduino A4
 * **SCL** ➔ Arduino A5
 
-## 💻 Installation and Usage
+##  Installation and Usage
 
 1. Install the required libraries in your Arduino IDE: `LiquidCrystal_I2C` and `SoftwareWire`.
 2. Upload the `.ino` file to your Arduino.
