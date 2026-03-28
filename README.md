@@ -43,3 +43,22 @@ A custom-built Arduino hardware solution for monitoring multi-point temperature 
 1. Install the required libraries in your Arduino IDE: `LiquidCrystal_I2C` and `SoftwareWire`.
 2. Upload the `.ino` file to your Arduino.
 3. Open Excel, enable the **Data Streamer** add-in, connect to the Arduino's COM port (Baud Rate: 9600), and click "Start Data".
+
+##  How to Stream Live Data into Excel
+
+This project is pre-configured to output data in a CSV format that natively perfectly pairs with Microsoft Excel's **Data Streamer** add-in.
+
+### Step 1: Enable the Data Streamer Add-in
+*(If you already have the "Data Streamer" tab in Excel, skip this step).*
+1. Open Excel and go to **File** > **Options**.
+2. Click on **Add-ins** on the left sidebar.
+3. At the bottom, change the "Manage" dropdown to **COM Add-ins** and click **Go...**
+4. Check the box next to **Microsoft Data Streamer for Excel** and click **OK**. You should now see a new "Data Streamer" tab at the top of Excel.
+
+### Step 2: Connect and Stream
+1. Ensure your Arduino is plugged into your computer via USB and the code is successfully uploaded.
+2. Open a blank Excel workbook and go to the **Data Streamer** tab.
+3. Click **Connect a Device** and select your Arduino's COM port (e.g., `COM3`, `COM4`).
+4. Click **Start Data**.
+
+Excel will automatically generate "Data In" and "Data Out" sheets. Your live temperature readings from all 5 sensors will immediately start populating the rows, ready to be highlighted and turned into a live-updating chart!
